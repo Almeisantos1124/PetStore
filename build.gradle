@@ -11,5 +11,10 @@ repositories {
 
 dependencies {
     testImplementation group: 'org.testng', name: 'testng', version: '7.1.0'
-    testRuntimeOnly    group:'io.rest-assured', name: 'rest-assured', version: '4.3.3'
+    testImplementation group:'io.rest-assured', name: 'rest-assured', version: '4.3.3'
 }
+
+test{
+    useTestNG()
+}
+
