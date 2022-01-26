@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="petstore.Pet" tests="3" skipped="0" failures="0" errors="0" timestamp="2022-01-26T23:21:36" hostname="DESKTOP-KLOQTP2" time="4.824">
+  <properties/>
+  <testcase name="incluirPet" classname="petstore.Pet" time="2.988"/>
+  <testcase name="consultarPet" classname="petstore.Pet" time="0.945"/>
+  <testcase name="alterarPet" classname="petstore.Pet" time="0.886"/>
+  <system-out><![CDATA[Request method:	POST
+Request URI:	https://petstore.swagger.io/v2/pet
+Proxy:			<none>
+Request params:	<none>
+Query params:	<none>
+Form params:	<none>
+Path params:	<none>
+Headers:		Accept=*/*
+				Content-Type=application/json; charset=UTF-8
+Cookies:		<none>
+Multiparts:		<none>
+Body:
+{
+    "id": 261120181,
+    "category": {
+        "id": 1,
+        "name": "KsljdljSJJD46444DD1"
+    },
+    "name": "Nutella",
+    "photoUrls": [
+        "string"
+    ],
+    "tags": [
+        {
+            "id": 2022260122,
+            "name": "data"
+        }
+    ],
+    "status": "available"
+}
+HTTP/1.1 200 OK
+Date: Wed, 26 Jan 2022 23:21:38 GMT
+Content-Type: application/json
+Transfer-Encoding: chunked
+Connection: keep-alive
+Access-Control-Allow-Origin: *
+Access-Control-Allow-Methods: GET, POST, DELETE, PUT
+Access-Control-Allow-Headers: Content-Type, api_key, Authorization
+Server: Jetty(9.2.9.v20150224)
+
+{
+    "id": 261120181,
+    "category": {
+        "id": 1,
+        "name": "KsljdljSJJD46444DD1"
+    },
+    "name": "Nutella",
+    "photoUrls": [
+        "string"
+    ],
+    "tags": [
+        {
+            "id": 2022260122,
+            "name": "data"
+        }
+    ],
+    "status": "available"
+}
+Request method:	GET
+Request URI:	https://petstore.swagger.io/v2/pet/261120181
+Proxy:			<none>
+Request params:	<none>
+Query params:	<none>
+Form params:	<none>
+Path params:	<none>
+Headers:		Accept=*/*
+				Content-Type=application/json; charset=UTF-8
+Cookies:		<none>
+Multiparts:		<none>
+Body:			<none>
+HTTP/1.1 200 OK
+Date: Wed, 26 Jan 2022 23:21:39 GMT
+Content-Type: application/json
+Transfer-Encoding: chunked
+Connection: keep-alive
+Access-Control-Allow-Origin: *
+Access-Control-Allow-Methods: GET, POST, DELETE, PUT
+Access-Control-Allow-Headers: Content-Type, api_key, Authorization
+Server: Jetty(9.2.9.v20150224)
+
+{
+    "id": 261120181,
+    "category": {
+        "id": 1,
+        "name": "KsljdljSJJD46444DD1"
+    },
+    "name": "Nutella",
+    "photoUrls": [
+        "string"
+    ],
+    "tags": [
+        {
+            "id": 2022260122,
+            "name": "data"
+        }
+    ],
+    "status": "vendida"
+}
+o token é KsljdljSJJD46444DD1
+Request method:	PUT
+Request URI:	https://petstore.swagger.io/v2/pet
+Proxy:			<none>
+Request params:	<none>
+Query params:	<none>
+Form params:	<none>
+Path params:	<none>
+Headers:		Accept=*/*
+				Content-Type=application/json; charset=UTF-8
+Cookies:		<none>
+Multiparts:		<none>
+Body:
+{
+    "id": 261120181,
+    "category": {
+        "id": 1,
+        "name": "KsljdljSJJD46444DD1"
+    },
+    "name": "Nutella",
+    "photoUrls": [
+        "string"
+    ],
+    "tags": [
+        {
+            "id": 2022260122,
+            "name": "data"
+        }
+    ],
+    "status": "vendida"
+}
+HTTP/1.1 200 OK
+Date: Wed, 26 Jan 2022 23:21:40 GMT
+Content-Type: application/json
+Transfer-Encoding: chunked
+Connection: keep-alive
+Access-Control-Allow-Origin: *
+Access-Control-Allow-Methods: GET, POST, DELETE, PUT
+Access-Control-Allow-Headers: Content-Type, api_key, Authorization
+Server: Jetty(9.2.9.v20150224)
+
+{
+    "id": 261120181,
+    "category": {
+        "id": 1,
+        "name": "KsljdljSJJD46444DD1"
+    },
+    "name": "Nutella",
+    "photoUrls": [
+        "string"
+    ],
+    "tags": [
+        {
+            "id": 2022260122,
+            "name": "data"
+        }
+    ],
+    "status": "vendida"
+}
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

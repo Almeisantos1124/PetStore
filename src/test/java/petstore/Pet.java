@@ -17,62 +17,63 @@ import static org.hamcrest.Matchers.contains;
 // 3 -Classe
 public class Pet {
     // 3.1 Atributos
-    String uri ="https://petstore.swagger.io/v2/pet"; // endereço da entidade Pet
+    String uri = "https://petstore.swagger.io/v2/pet"; // endereço da entidade Pet
 
     // 3.2 Metodos e Funções
     public String lerJson(String caminhoJson) throws IOException {
-            return new String(Files.readAllBytes(Paths.get(caminhoJson)));
+        return new String(Files.readAllBytes(Paths.get(caminhoJson)));
     }
 
     //Incluir  - Create - Post
     @Test(priority = 1)  //Identifica o metodo ou função de test para o TestNG
     public void incluirPet() throws IOException {
-        String jsonBody = lerJson ("db/pet1.json");
+        String jsonBody = lerJson("db/pet1.json");
 
-    // Sintaxe Gherkin
-    // Giv (Dado)
-    // When (Quando)
-   //  Then (Então)
+        // Sintaxe Gherkin
+        // Giv (Dado)
+        // When (Quando)
+        //  Then (Então)
 
-    given() //Dado
-            .contentType("application/json")//conteudo em API REST
-            .log().all()
-            .body(jsonBody)
-    .when() //Quando
-            .post(uri)
-    .then() // Então
-            .log().all()
-            .statusCode(200)
-            .body("name",is("Nutella"))
-            .body("status",is("available"))
-            .body("category.name", is("KsljdljSJJD46444DD1"))
-            .body("tags.name",contains("data"))
-    ;
-
-    }
-    @Test(priority = 2)
-    public void consultarPet(){
-        String petId = "261120181";
-        String token =
-        given()
-            .contentType("application/json")
-            .log().all()
-        .when()
-                .get(uri + "/"+ petId)
-        .then()
+        given() //Dado
+                .contentType("application/json")//conteudo em API REST
+                .log().all()
+                .body(jsonBody)
+                .when() //Quando
+                .post(uri)
+                .then() // Então
                 .log().all()
                 .statusCode(200)
-                .body("name",is("Nutella"))
+                .body("name", is("Nutella"))
+                .body("status", is("available"))
                 .body("category.name", is("KsljdljSJJD46444DD1"))
-                .body("status",is("vendida"))
-        .extract()
-                .path("category.name")
-
+                .body("tags.name", contains("data"))
         ;
+
+    }
+
+    @Test(priority = 2)
+    public void consultarPet() {
+        String petId = "261120181";
+        String token =
+
+                given()
+                        .contentType("application/json")
+                        .log().all()
+                        .when()
+                        .get(uri + "/" + petId)
+                        .then()
+                        .log().all()
+                        .statusCode(200)
+                        .body("name", is("Nutella"))
+                        .body("category.name", is("KsljdljSJJD46444DD1"))
+                        .body("status", is("vendida"))
+                        .extract()
+                        .path("category.name");
         System.out.println("o token é " + token);
 
 
     }
+
     @Test(priority = 3)
     public void alterarPet() throws IOException {
         String jsonBody = lerJson("db/pet2.json");
@@ -81,18 +82,16 @@ public class Pet {
                 .contentType("application/json")
                 .log().all()
                 .body(jsonBody)
-        .when()
+                .when()
                 .put(uri)
-        .then()
+                .then()
                 .log().all()
                 .statusCode(200)
-                .body("name",is ("Nutella"))
-                .body("status", is ("vendida"))
-
-                        ;
+                .body("name", is("Nutella"))
+                .body("status", is("vendida"))
+        ;
     }
 
 
+
 }
-
-
